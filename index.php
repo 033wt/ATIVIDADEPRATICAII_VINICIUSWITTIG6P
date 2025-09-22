@@ -1,15 +1,22 @@
 <?php
-$frutas = [];
+$numeros = [];
+$pares = [];
+$impares = [];
 
-for ($i = 1; $i <= 5; $i++) {
-    echo "Digite a fruta $i: ";
-    $fruta = trim(fgets(STDIN));
-    $frutas[] = $fruta;
+for ($i = 1; $i <= 10; $i++) {
+    echo "Digite o número $i: ";
+    $num = intval(fgets(STDIN));
+    $numeros[] = $num;
+
+    if ($num % 2 == 0) {
+        $pares[] = $num;
+    } else {
+        $impares[] = $num;
+    }
 }
 
-sort($frutas);
+echo "\nNúmeros pares:\n";
+print_r($pares);
 
-echo "\nFrutas em ordem alfabética:\n";
-foreach ($frutas as $f) {
-    echo "- $f\n";
-}
+echo "\nNúmeros ímpares:\n";
+print_r($impares);
